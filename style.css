@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+/* VIDEO BACKGROUND */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* LỚP TỐI */
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* CONTAINER */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeIn 1.5s ease;
+}
+
+/* AVATAR */
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+p {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* BUTTON */
+.link {
+  display: block;
+  margin: 10px auto;
+  padding: 12px;
+  width: 250px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.link:hover {
+  background: #00ffcc;
+  color: black;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  pointer-events: none; /* 👈 thêm dòng này */
+}
+.bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 177.77vh;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -2;
+}
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}

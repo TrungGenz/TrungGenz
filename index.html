@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Trung Holly</title>
+
+    <!-- ICON -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      /* VIDEO BACKGROUND */
+      .bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+      }
+
+      .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+      }
+
+      /* CONTAINER */
+      .container {
+        text-align: center;
+        color: white;
+        padding-top: 120px;
+      }
+
+      /* AVATAR */
+      .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid white;
+        transition: transform 0.2s ease;
+      }
+
+      /* TEXT */
+      h1 {
+        margin-top: 10px;
+      }
+
+      p {
+        opacity: 0.8;
+        margin-bottom: 20px;
+      }
+
+      /* LINK BUTTON */
+      .link {
+        display: block;
+        margin: 10px auto;
+        padding: 12px;
+        width: 250px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .link:hover {
+        background: #00ffcc;
+        color: black;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- VIDEO -->
+    <iframe
+      class="bg-video"
+      src="https://www.youtube.com/embed/KocQw_HRsqI?autoplay=1&mute=1&loop=1&playlist=KocQw_HRsqI&controls=0&showinfo=0&modestbranding=1"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+    ></iframe>
+    <audio autoplay loop muted id="music">
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const music = document.getElementById("music");
+      document.addEventListener("click", () => {
+        music.muted = false;
+        music.play();
+      });
+    </script>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+      <img src="avatar.jpg" class="avatar" id="avatar" />
+
+      <h1>Trung Holly</h1>
+      <p>📍 Quảng Ngãi | Flycam & Vlog</p>
+
+      <!-- LINK THẬT -->
+      <a
+        class="link"
+        href="https://www.facebook.com/trungg.voo"
+        target="_blank"
+      >
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+
+      <a
+        class="link"
+        href="https://www.tiktok.com/@trunggenzvn"
+        target="_blank"
+      >
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+
+      <a class="link" href="https://www.youtube.com/@TrungGENZ" target="_blank">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+    </div>
+
+    <!-- SCRIPT HIỆU ỨNG -->
+    <script>
+      const avatar = document.getElementById("avatar");
+
+      window.addEventListener("scroll", () => {
+        let scrollY = window.scrollY;
+
+        // avatar lướt nhẹ theo scroll
+        avatar.style.transform = `translateY(${scrollY * 0.3}px)`;
+      });
+    </script>
+  </body>
+</html>
